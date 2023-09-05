@@ -1,0 +1,19 @@
+{
+  "name": "web-lab-1.2",
+  "version": "1.0.0",
+  "devDependencies": {
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "scripts": {
+    "serve": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lubitelkvokk",
+  "license": "ISC",
+  "description": "The 1st lab for web programming"
+}

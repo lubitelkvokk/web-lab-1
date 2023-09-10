@@ -1,5 +1,5 @@
-import Parameters from "./Parameters";
-import {stylesheetToCSSStylesConvertation} from "../utils/StylesheetToCSSStyles";
+import Parametres from ".././Parametres";
+import {stylesheetToCSSStylesConvertation} from "../../utils/StylesheetToCSSStyles";
 
 
 export default class Block{

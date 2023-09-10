@@ -1,7 +1,7 @@
-import Block from "../components/Block";
-import SVGBlock from "../components/SVGBlock";
-import FormBlock from "../components/FormBlock";
-import AuxBlock from "../components/AuxBlock";
+import Block from "../components/Blocks/Block";
+import SVGBlock from "../components/Blocks/SVGBlock";
+import FormBlock from "../components/Blocks/FormBlock";
+import AuxBlock from "../components/Blocks/AuxBlock";
 
 export const model = [
     // Header
@@ -246,53 +246,73 @@ export const model = [
         }
     ),
 
-    new FormBlock("form", "",
-        new FormBlock("label", "", "Choice X:", {}).toHTML() +
+    new Block("div", "form-block",
+        new FormBlock("label", "", "Choose X:", {}).toHTML() +
+
         new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x4", "", {"id": "x4", "type": "radio", "name": "xChoice", "value": "x4"}).toHTML() +
-        new FormBlock("label", "", "4", {"for": "x4"}).toHTML() +
+        new FormBlock("span", "x-error", "", {"class": "error-message"}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x3", "", {"id": "x3", "type": "radio", "name": "xChoice", "value": "x3"}).toHTML() +
-        new FormBlock("label", "", "3", {"for": "x3"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x2", "", {"id": "x2", "type": "radio", "name": "xChoice", "value": "x2"}).toHTML() +
-        new FormBlock("label", "", "2", {"for": "x2"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x1", "", {"id": "x1", "type": "radio", "name": "xChoice", "value": "x1"}).toHTML() +
-        new FormBlock("label", "", "1", {"for": "x1"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x0", "", {"id": "x0", "type": "radio", "name": "xChoice", "value": "x0"}).toHTML() +
-        new FormBlock("label", "", "0", {"for": "x0"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x-1", "", {"id": "x-1", "type": "radio", "name": "xChoice", "value": "x-1"}).toHTML() +
-        new FormBlock("label", "", "-1", {"for": "x-1"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x-2", "", {"id": "x-2", "type": "radio", "name": "xChoice", "value": "x-2"}).toHTML() +
-        new FormBlock("label", "", "-2", {"for": "x-2"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x-3", "", {"id": "x-3", "type": "radio", "name": "xChoice", "value": "x-3"}).toHTML() +
-        new FormBlock("label", "", "-3", {"for": "x-3"}).toHTML() +
-        new AuxBlock("br").toHTML() +
-        new FormBlock("input", "x-4", "", {"id": "x-4", "type": "radio", "name": "xChoice", "value": "x-4"}).toHTML() +
-        new FormBlock("label", "", "-4", {"for": "x-4"}).toHTML() +
+        // X
+        new FormBlock("input", "x4", "", {"type": "button", "name": "xChoice", "value": "4"}).toHTML() +
         new AuxBlock("br").toHTML() +
 
+        new FormBlock("input", "x3", "", {"type": "button", "name": "xChoice", "value": "3"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x2", "", {"type": "button", "name": "xChoice", "value": "2"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x1", "", {"type": "button", "name": "xChoice", "value": "1"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x0", "", {"type": "button", "name": "xChoice", "value": "0"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x-1", "", {"type": "button", "name": "xChoice", "value": "-1"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x-2", "", {"type": "button", "name": "xChoice", "value": "-2"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x-3", "", {"type": "button", "name": "xChoice", "value": "-3"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "x-4", "", {"type": "button", "name": "xChoice", "value": "-4"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "selectedX", "", {"type": "hidden", "value": "", "name": "selectedX"}).toHTML() +
+
+        // Y
+        new FormBlock("span", "y-error", "", {"class": "error-message"}).toHTML() +
         new FormBlock("label", "", "Y", {}).toHTML() +
-        new FormBlock("input", "y", "", {"id": "y", "type": "number", "name": "yChoice", "value": "y"}).toHTML() +
+        new FormBlock("input", "y", "", {"type": "number", "name": "yChoice", "value": "y"}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("label", "", "Choice R:", {}).toHTML() +
+
+
+        // R
+        new FormBlock("label", "", "choose R:", {}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("input", "r1", "", {"id": "r1", "type": "radio", "name": "rChoice", "value": "r1"}).toHTML() +
-        new FormBlock("label", "", "1", {"for": "r1"}).toHTML() +
+        new FormBlock("span", "r-error", "", {"class": "error-message"}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("input", "r2", "", {"id": "r2", "type": "radio", "name": "rChoice", "value": "r2"}).toHTML() +
-        new FormBlock("label", "", "2", {"for": "r2"}).toHTML() +
+
+        new FormBlock("input", "r1", "", {"type": "button", "name": "rChoice", "value": "1"}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("input", "r3", "", {"id": "r3", "type": "radio", "name": "rChoice", "value": "r3"}).toHTML() +
-        new FormBlock("label", "", "3", {"for": "r3"}).toHTML() +
+
+        new FormBlock("input", "r2", "", {"type": "button", "name": "rChoice", "value": "2"}).toHTML() +
         new AuxBlock("br").toHTML() +
-        new FormBlock("button", "", "Submit", {"type": "submit"}).toHTML()
-        ,
-        {"method": "get"})
+
+        new FormBlock("input", "r3", "", {"type": "button", "name": "rChoice", "value": "3"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "r4", "", {"type": "button", "name": "rChoice", "value": "4"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("input", "r5", "", {"type": "button", "name": "rChoice", "value": "5"}).toHTML() +
+        new AuxBlock("br").toHTML() +
+
+        new FormBlock("button", "form-submit", "Submit", {"type": "submit"}).toHTML()
+    ),
+
+    new Block("div", "hit-results", "")
 
 ]

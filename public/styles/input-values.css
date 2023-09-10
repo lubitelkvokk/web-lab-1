@@ -1,0 +1,16 @@
+input[name="xChoice"]:hover {
+    color: blue;
+}
+
+input[name="xChoice"].active {
+    background-color: beige;
+}
+
+input[name="rChoice"]:hover {
+    color: blue;
+}
+
+input[name="rChoice"].active {
+    background-color: beige;
+}
+

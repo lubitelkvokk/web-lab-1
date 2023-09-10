@@ -1,6 +1,5 @@
 import Block from "./Block";
-import Parameters from "./Parameters";
-import * as path from "path";
+import Parametres from "../Parametres";
 
 export default // @ts-ignore
 class FormBlock extends Block {
@@ -11,9 +10,9 @@ class FormBlock extends Block {
     private id: string | undefined;
     // @ts-ignore
     private content: string | undefined;
-    private parameters: Parameters;
+    private parameters: Parametres;
 
-    constructor(tag: string, id: string, content: string, parameters: Parameters) {
+    constructor(tag: string, id: string, content: string, parameters: Parametres) {
         super(tag, id, content);
         this.parameters = parameters;
     }
@@ -27,7 +26,7 @@ class FormBlock extends Block {
         </${this.tag}>`;
     }
 
-    parametersToString(parameters: Parameters) {
+    parametersToString(parameters: Parametres) {
         let result = "";
         for (let key in parameters) {
             result += key + '="' + parameters[key] + '" ';

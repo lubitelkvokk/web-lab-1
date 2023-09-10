@@ -1,5 +1,5 @@
 
 //Deprecated
-export default interface Parameters {
+export default interface Parametres {
     [key: string]: string;
 }

@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $paramValueX = (double)$_GET["x"];
         $paramValueY = (double)$_GET["y"];
         $paramValueR = (double)$_GET["r"];
-        if (validate($paramValueX, $paramValueY, $paramValueR)) {
+        if (!validate($paramValueX, $paramValueY, $paramValueR)) {
             http_response_code(400);
             echo "NORMALNO VVEDI DA?";
             return;
         }
         $hit_result = isHit($paramValueX, $paramValueY, $paramValueR);
-
+        echo $hit_result;
         $time_end = microtime(true);
         $script_runtime = round(($time_end - $time_start) * 1000000);
         $current_time = date("H:i:s");

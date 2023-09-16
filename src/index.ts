@@ -4,42 +4,64 @@ import Block from "./components/Blocks/Block";
 import {model} from "./model/main_page";
 import * as events from "events";
 import validation from "./utils/Validation";
-import {rButtonListening, buttonsListening} from "./utils/ButtonsListening";
-import {getR, getX, getY} from "./utils/SelectionResults";
-import axios from "axios";
+import {rButtonListening, xButtonsListening} from "./specific_functions/ButtonsListening";
+import {getR, getRErrorField, getX, getXErrorField, getY, getYErrorField} from "./specific_functions/SelectionResults";
+import {tableIsEmpty} from "./specific_functions/tableInfo";
 
+//deprecated
+// model.forEach(block => {
+//     // @ts-ignore
+//     return document.querySelector(".main_page").insertAdjacentHTML("beforeend", block.toHTML())
+// })
 
-model.forEach(block => {
-    // @ts-ignore
-    return document.querySelector(".main_page").insertAdjacentHTML("beforeend", block.toHTML())
-})
-
+// Получение данных о всей таблице
 
 //Прослушивание кнопки X
-buttonsListening();
-//Прослушивание кнопки X
+xButtonsListening();
+//Прослушивание кнопки R
 rButtonListening();
+
 // @ts-ignore
 document.querySelector("#form-submit").addEventListener("click", function () {
-    console.log(validation())
-    if (validation()) {
 
-        fetch(`http://localhost?x=${getX()}&y=${getY()}&r=${getR()}`, {
-            method: 'GET',
-            headers: {
-                "Cookie": "kvokka=lubitel"
-            }
-        })
+    let validation_result = validation(getX(), getY(), getR(), getXErrorField(), getYErrorField(), getRErrorField());
+    if (validation_result) {
+        fetch(`https://se.ifmo.ru/~s367403/index.php?x=${getX()?.value}&y=${getY()!.value}&r=${getR()?.value}`)
             .then(response => response.text())
-            .then(data => updateTable(data))
-    }
+            .then(data => {
+                if (tableIsEmpty()) {
+                    updateTable(data);
+                } else {
+                    addRowToTable(data);
+                }
 
+            })
+            .catch(reason => {
+                console.error(reason)
+            })
+    }
 })
 
 
 function updateTable(html: string) {
     // @ts-ignore
-    document.querySelector("#hit-results").innerHTML = html;
+    document.querySelector('#hit-results').innerHTML += "<tr>\n" +
+        "                                                                <th>X</th>\n" +
+        "                                                                <th>Y</th>\n" +
+        "                                                                <th>R</th>\n" +
+        "                                                                <th>Current time</th>\n" +
+        "                                                                <th>Script runtime</th>\n" +
+        "                                                                <th>Hit result</th>\n" +
+        "                                                            </tr>"
+
+
+    // @ts-ignore
+    document.querySelector("#hit-results").innerHTML += html;
+}
+
+function addRowToTable(html: string) {
+    // @ts-ignore
+    document.querySelector("#hit-results").innerHTML += html;
 }
 
 

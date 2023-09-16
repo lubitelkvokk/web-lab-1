@@ -9,15 +9,12 @@
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
-    "serve": "webpack-dev-server",
+    "serve": "webpack serve --open --mode development",
     "build": "webpack",
+    "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lubitelkvokk",
   "license": "ISC",
-  "description": "The 1st lab for web programming",
-  "dependencies": {
-    "axios": "^1.5.0",
-    "fetch": "^1.1.0"
-  }
+  "description": "The 1st lab for web programming"
 }

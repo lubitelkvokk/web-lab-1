@@ -3,6 +3,14 @@ const path = require("path");
 module.exports = {
     entry: "./src/index.ts",
     mode: "development",
+
+    // devServer: {
+    //     watchFile: path.join(__dirname, 'src'),
+    //     port: 9000,
+    //     liveReload: true // Включаем автоматическую перезагрузку страницы
+    // },
+
+
     module: {
         rules: [
             {

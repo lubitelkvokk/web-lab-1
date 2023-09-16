@@ -11,13 +11,6 @@ export const model = [
         new Block("h1", "", "Variant 3514").toHTML()),
 
 
-    // Hit table
-    new Block("table", "hit_results",
-        new Block("tr", "",
-            new Block("th", "", "X").toHTML() +
-            new Block("th", "", "Y").toHTML() +
-            new Block("th", "", "R").toHTML() +
-            new Block("th", "", "Hit").toHTML()).toHTML()),
 
     // SVG BLOCK
     new SVGBlock("svg", "",
@@ -284,13 +277,14 @@ export const model = [
 
         // Y
         new FormBlock("span", "y-error", "", {"class": "error-message"}).toHTML() +
+        new AuxBlock("br").toHTML() +
         new FormBlock("label", "", "Y", {}).toHTML() +
-        new FormBlock("input", "y", "", {"type": "number", "name": "yChoice", "value": "y"}).toHTML() +
+        new FormBlock("input", "y", "", {"type": "text", "name": "yChoice", "value": ""}).toHTML() +
         new AuxBlock("br").toHTML() +
 
 
         // R
-        new FormBlock("label", "", "choose R:", {}).toHTML() +
+        new FormBlock("label", "", "Choose R:", {}).toHTML() +
         new AuxBlock("br").toHTML() +
         new FormBlock("span", "r-error", "", {"class": "error-message"}).toHTML() +
         new AuxBlock("br").toHTML() +
@@ -313,6 +307,8 @@ export const model = [
         new FormBlock("button", "form-submit", "Submit", {"type": "submit"}).toHTML()
     ),
 
-    new Block("div", "hit-results", "")
+    new Block("span", "server-validation-error", ""),
+
+    new Block("table", "hit-results", "")
 
 ]

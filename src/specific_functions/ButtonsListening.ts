@@ -1,4 +1,4 @@
-export function buttonsListening() {
+export function xButtonsListening() {
     const xButtons: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[name="xChoice"]');
 
     let selectedXButton: HTMLInputElement | null = null;

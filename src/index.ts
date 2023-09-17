@@ -21,9 +21,9 @@ xButtonsListening();
 //Прослушивание кнопки R
 rButtonListening();
 
-// @ts-ignore
-document.querySelector("#form-submit").addEventListener("click", function () {
 
+
+document.querySelector("#form-submit")?.addEventListener("click", function () {
     let validation_result = validation(getX(), getY(), getR(), getXErrorField(), getYErrorField(), getRErrorField());
     if (validation_result) {
         fetch(`https://se.ifmo.ru/~s367403/index.php?x=${getX()?.value}&y=${getY()!.value}&r=${getR()?.value}`)
@@ -44,8 +44,7 @@ document.querySelector("#form-submit").addEventListener("click", function () {
 
 
 function updateTable(html: string) {
-    // @ts-ignore
-    document.querySelector('#hit-results').innerHTML += "<tr>\n" +
+    document.querySelector('#hit-results')!.innerHTML += "<tr>\n" +
         "                                                                <th>X</th>\n" +
         "                                                                <th>Y</th>\n" +
         "                                                                <th>R</th>\n" +
@@ -55,13 +54,13 @@ function updateTable(html: string) {
         "                                                            </tr>"
 
 
-    // @ts-ignore
-    document.querySelector("#hit-results").innerHTML += html;
+    document.querySelector("#hit-results")!.innerHTML += html;
+
 }
 
 function addRowToTable(html: string) {
-    // @ts-ignore
-    document.querySelector("#hit-results").innerHTML += html;
+
+    document.querySelector("#hit-results")!.innerHTML += html;
 }
 
 

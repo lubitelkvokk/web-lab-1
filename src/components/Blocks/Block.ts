@@ -3,9 +3,9 @@ import {stylesheetToCSSStylesConvertation} from "../../utils/StylesheetToCSSStyl
 
 
 export default class Block{
-    private tag: string;
-    private id: string;
-    private content: string;
+    protected tag: string;
+    protected id: string;
+    protected content: string;
 
     constructor(tag:string, id: string, content: string) {
         this.tag = tag;

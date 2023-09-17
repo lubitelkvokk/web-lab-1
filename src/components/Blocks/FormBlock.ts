@@ -1,15 +1,9 @@
 import Block from "./Block";
 import Parametres from "../Parametres";
 
-export default // @ts-ignore
+export default
 class FormBlock extends Block {
 
-    // @ts-ignore
-    private tag: string | undefined;
-    // @ts-ignore
-    private id: string | undefined;
-    // @ts-ignore
-    private content: string | undefined;
     private parameters: Parametres;
 
     constructor(tag: string, id: string, content: string, parameters: Parametres) {

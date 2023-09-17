@@ -1,5 +1,7 @@
 table {
+    display: inline-block;
     border-collapse: collapse;
+    width: 300px;
 }
 
 th, td {

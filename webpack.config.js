@@ -1,15 +1,16 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
     entry: "./src/index.ts",
     mode: "development",
-
-    // devServer: {
-    //     watchFile: path.join(__dirname, 'src'),
-    //     port: 9000,
-    //     liveReload: true // Включаем автоматическую перезагрузку страницы
-    // },
-
+    // watch: true,
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'public'), // Путь к вашей директории с контентом
+        },
+        hot: true,
+    },
 
     module: {
         rules: [

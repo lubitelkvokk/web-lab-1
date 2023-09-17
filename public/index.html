@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/table.css">
     <link rel="stylesheet" href="styles/errors.css">
     <link rel="stylesheet" href="styles/input-values.css">
+    <link rel="stylesheet" href="styles/form-input-blocks.css">
 </head>
 <body class="main_page">
 
@@ -111,101 +112,101 @@
     </polygon>
 </svg>
 <div id="form-block">
-    <label>
-        Choose X:
-    </label><br>
+    <div class="input-block" id="x-input-block">
+        <label>
+            Choose X:
+        </label>
 
-    <br><span class="error-message" id="x-error">
-
-        </span><br>
-
-    <br><input type="button" name="xChoice" value="4" id="x4">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="3" id="x3">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="2" id="x2">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="1" id="x1">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="0" id="x0">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="-1" id="x-1">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="-2" id="x-2">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="-3" id="x-3">
-
-    <br>
-
-    <br><input type="button" name="xChoice" value="-4" id="x-4">
-
-    <br>
-
-    <br><input type="hidden" value="" name="selectedX" id="selectedX">
-
-    <span class="error-message" id="y-error">
+        <br><span class="error-message" id="x-error">
 
         </span><br>
 
-    <br><label>
-    Y
-</label><input type="text" name="yChoice" value="" id="y">
+        <br><input type="button" name="xChoice" value="4" id="x4">
 
-    <br>
+        <br>
 
-    <br><label>
-    Choose R:
-</label><br>
+        <br><input type="button" name="xChoice" value="3" id="x3">
 
-    <br><span class="error-message" id="r-error">
+        <br>
+
+        <br><input type="button" name="xChoice" value="2" id="x2">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="1" id="x1">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="0" id="x0">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="-1" id="x-1">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="-2" id="x-2">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="-3" id="x-3">
+
+        <br>
+
+        <br><input type="button" name="xChoice" value="-4" id="x-4">
+
+    </div>
+
+    <div class="input-block" id="y-input-block">
+
+
+        <label>
+            Y
+            <input type="text" name="yChoice" value="" id="y">
+            <br>
+            <span class="error-message" id="y-error"></span>
+        </label>
+    </div>
+
+
+    <div class="input-block" id="r-input-block">
+        <label>
+            Choose R:
+        </label>
+
+        <br><span class="error-message" id="r-error">
 
         </span><br>
 
-    <br><input type="button" name="rChoice" value="1" id="r1">
+        <br><input type="button" name="rChoice" value="1" id="r1">
 
-    <br>
+        <br>
 
-    <br><input type="button" name="rChoice" value="2" id="r2">
+        <br><input type="button" name="rChoice" value="2" id="r2">
 
-    <br>
+        <br>
 
-    <br><input type="button" name="rChoice" value="3" id="r3">
+        <br><input type="button" name="rChoice" value="3" id="r3">
 
-    <br>
+        <br>
 
-    <br><input type="button" name="rChoice" value="4" id="r4">
+        <br><input type="button" name="rChoice" value="4" id="r4">
 
-    <br>
+        <br>
 
-    <br><input type="button" name="rChoice" value="5" id="r5">
+        <br><input type="button" name="rChoice" value="5" id="r5">
+    </div>
 
-    <br>
+    <table id="hit-results">
+    </table>
 
-    <br>
-    <button type="submit" id="form-submit">
-        Submit
-    </button>
+    <div id="submit-container">
+        <button type="submit" id="form-submit">
+            Submit
+        </button>
+    </div>
+
 </div>
-<span id="server-validation-error">
-
-        </span>
-<table id="hit-results">
-
-</table>
 
 <script src="./bundle.js"></script>
 </body>

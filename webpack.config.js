@@ -17,7 +17,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                include: [path.resolve(__dirname, 'src/components'), path.resolve(__dirname, 'src')]
+                include: [path.resolve(__dirname, './src')]
             }
         ]
     },

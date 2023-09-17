@@ -1,8 +1,4 @@
-import Block from "./components/Blocks/Block";
 
-
-import {model} from "./model/main_page";
-import * as events from "events";
 import validation from "./utils/Validation";
 import {rButtonListening, xButtonsListening} from "./specific_functions/ButtonsListening";
 import {getR, getRErrorField, getX, getXErrorField, getY, getYErrorField} from "./specific_functions/SelectionResults";

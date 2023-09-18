@@ -4,10 +4,11 @@ session_start();
 
 require_once "validation.php";
 require_once "hit.php";
+require_once "getTable.php";
+
 $time_start = microtime(true);
 
 
-// необходимые HTTP-заголовки
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 //header("Content-Type: application/json; charset=UTF-8");
@@ -30,40 +31,32 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
             return;
         }
         $hit_result = isHit($paramValueX, $paramValueY, $paramValueR);
-        echo $hit_result;
         $time_end = microtime(true);
         $script_runtime = round(($time_end - $time_start) * 1000000);
         $current_time = date("H:i:s");
-
         $result_table_row = array(
-            $paramValueX, $paramValueY, $paramValueR, $current_time, $script_runtime, $hit_result
+            $paramValueX, $paramValueY, $paramValueR, $current_time, $script_runtime, $hit_result ? "Hitting": "Missed"
         );
         if (!isset($_SESSION['dataHistory'])) {
             $_SESSION['dataHistory'] = array();
         }
         array_push($_SESSION['dataHistory'], $result_table_row);
-//        echo $_SESSION['dataHistory'][0][0];
-        echo "<table>
-                <tr>
-                    <th>X</th>
-                    <th>Y</th>
-                    <th>R</th>
-                    <th>Current time</th>
-                    <th>Script runtime</th>
-                    <th>Hit result</th>
-                </tr> ";
-        foreach ($_SESSION['dataHistory'] as $row) {
+
+//        if (count($_SESSION['dataHistory']) == 1) {
+//            getTable();
+//        } else {
             echo "<tr>
-                    <td>$row[0]</td>
-                    <td>$row[1]</td>
-                    <td>$row[2]</td>
-                    <td>$row[3]</td>
-                    <td>$row[4]</td>
-                    <td>$row[5]</td>
+                    <td>$result_table_row[0]</td>
+                    <td>$result_table_row[1]</td>
+                    <td>$result_table_row[2]</td>
+                    <td>$result_table_row[3]</td>
+                    <td>$result_table_row[4]</td>
+                    <td>$result_table_row[5]</td>
                 </tr> 
                 ";
-        }
-        echo "</table>";
+//        }
+
+
     } else {
         http_response_code(203);
         echo "Non-Authoritative Information";

@@ -1,16 +1,9 @@
-input[name="xChoice"]:hover {
-    color: blue;
+input[name$="Choice"]:hover {
+    color: #db04f8;
 }
 
-input[name="xChoice"].active {
+input[name$="Choice"].active {
     background-color: beige;
 }
 
-input[name="rChoice"]:hover {
-    color: blue;
-}
-
-input[name="rChoice"].active {
-    background-color: beige;
-}
 

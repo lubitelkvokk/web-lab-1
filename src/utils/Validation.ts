@@ -10,7 +10,7 @@ export default function validation(x: HTMLInputElement | null, y: HTMLInputEleme
     // Проверка X
     if (x?.value == "") {
         xError!.textContent = "Значение поля X должно быть выбрано";
-        isVaild
+        isVaild = false;
     } else {
         xError!.textContent = "";
     }
@@ -20,8 +20,11 @@ export default function validation(x: HTMLInputElement | null, y: HTMLInputEleme
         yError!.textContent = "Значение поля Y должно быть выбрано";
         isVaild = false;
     } else {
-        let y_number = parseFloat(y!.value);
-        if (y_number <= -5 || y_number >= 3) {
+
+        let y_number = parseFloat(y!.value.slice(0,5));
+        // console.log(/^\s*[0-9]+.?[0-9]*\s*$/.test(y.value));
+        console.log(!(/^\s*[0-9]+.?[0-9]*\s*$/.test(y.value)) || (y_number <= -5 || y_number >= 3))
+        if (!(/^\s*[0-9]+.?[0-9]*\s*$/.test(y.value)) || (y_number <= -5 || y_number >= 3)) {
             yError!.textContent = "-5 < Y < 3";
             isVaild = false;
         }
@@ -30,7 +33,7 @@ export default function validation(x: HTMLInputElement | null, y: HTMLInputEleme
         }
 
     }
-
+    
     // Проверка R
     if (r?.value == "") {
         rError!.textContent = "Значение поля R должно быть выбрано";

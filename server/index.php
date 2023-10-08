@@ -25,6 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         $paramValueX = (double)$_GET["x"];
         $paramValueY = (double)$_GET["y"];
         $paramValueR = (double)$_GET["r"];
+        $paramValueTimeZone = $_GET["timeZone"];
+        date_default_timezone_set($paramValueTimeZone);
         if (!validate($paramValueX, $paramValueY, $paramValueR)) {
             http_response_code(400);
             echo "NORMALNO VVEDI DA?";

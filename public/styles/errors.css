@@ -1,11 +1,3 @@
-#x-error{
-    color: red;
-}
-
-#y-error{
-    color:red;
-}
-
-#r-error{
-    color:red;
+[id$=-error]{
+    color: #0cfdfd;
 }

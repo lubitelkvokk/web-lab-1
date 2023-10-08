@@ -9,10 +9,8 @@
     "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
-    "start": "webpack serve --open",
     "serve": "webpack serve --open --mode development",
     "build": "webpack",
-    "dev": "webpack-dev-server --hot --inline --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "lubitelkvokk",
